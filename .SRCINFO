@@ -1,0 +1,23 @@
+pkgbase = cloudflare-dns-tray
+	pkgdesc = Lightweight 1-click Cloudflare 1.1.1.1 DNS status bar toggle for KDE Plasma and Linux desktops
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/revanthlol/cloudflare-dns-tray
+	install = cloudflare-dns-tray.install
+	arch = any
+	license = MIT
+	depends = python
+	depends = python-pyqt6
+	depends = libnotify
+	depends = cloudflare-warp-bin
+	optdepends = bind: for dig DNS resolution testing in context menu
+	source = cloudflare-dns-tray.py
+	source = cloudflare-dns-tray.desktop
+	source = cloudflare-dns-tray.service
+	source = LICENSE
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = cloudflare-dns-tray

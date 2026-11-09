@@ -1,0 +1,22 @@
+post_install() {
+    echo ":: Cloudflare DNS Tray installed successfully!"
+    echo "::"
+    echo ":: Make sure the Cloudflare daemon is enabled & running:"
+    echo "::   sudo systemctl enable --now warp-svc"
+    echo "::"
+    echo ":: To start the status bar toggle immediately in this session:"
+    echo "::   systemctl --user daemon-reload"
+    echo "::   systemctl --user enable --now cloudflare-dns-tray.service"
+    echo "::"
+    echo ":: (It will automatically launch on every future desktop login)"
+}
+
+post_upgrade() {
+    post_install
+}
+
+pre_remove() {
+    echo ":: Stopping Cloudflare DNS Tray user service if running..."
+    systemctl --user stop cloudflare-dns-tray.service 2>/dev/null || true
+    systemctl --user disable cloudflare-dns-tray.service 2>/dev/null || true
+}

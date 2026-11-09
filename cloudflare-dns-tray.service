@@ -1,0 +1,13 @@
+[Unit]
+Description=Cloudflare DNS Status Bar Toggle
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/cloudflare-dns-tray
+Restart=on-failure
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=graphical-session.target
